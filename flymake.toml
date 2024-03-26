@@ -3,4 +3,4 @@ name = "foo"
 version = "1.0"
 
 [dependencies]
-bar = { path="../bar" }
+bar = { git="git@github.com:drewagislason/bar.git" }
