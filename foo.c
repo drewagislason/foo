@@ -7,6 +7,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "foo.h"
+#include "bar.h"
 
 /*!------------------------------------------------------------------------------------------------
   @defgroup foo A simple math program to demonstrate features of flymake and flydoc
@@ -40,14 +41,16 @@ int main(int argc, char *argv[])
   int b = 2;
 
   if(argc > 1 && ((strcmp(argv[1], "--help") == 0) || (strcmp(argv[1], "--version") == 0)))
-    printf("foo v%s [n1 n2] - add two numbers\n", SZ_FOO_VER);
+    printf("foo v%s [n1 n2] - simple math on two numbers\n", SZ_FOO_VER);
   else
   {
     if(argc >= 2)
       a = atoi(argv[1]);
     if(argc >= 3)
       b = atoi(argv[2]);
+
     printf("add     : %d + %d = %d\n", a, b, foo_add(a,b));
+    printf("multiply: %d * %d = %d\n", a, b, bar_multiply(a,b));
   }
 
   return 0;
