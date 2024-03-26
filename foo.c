@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include "foo.h"
 #include "bar.h"
+#include "baz.h"
 
 /*!------------------------------------------------------------------------------------------------
   @defgroup foo A simple math program to demonstrate features of flymake and flydoc
@@ -51,6 +52,7 @@ int main(int argc, char *argv[])
 
     printf("add     : %d + %d = %d\n", a, b, foo_add(a,b));
     printf("multiply: %d * %d = %d\n", a, b, bar_multiply(a,b));
+    printf("square  : %d ^ 2 = %d\n", a, baz_square(a));
   }
 
   return 0;

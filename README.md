@@ -1,6 +1,6 @@
 # Project foo
 
-Version 1.1
+Version 1.2
 
 A very simple library that multiplies numbers
 
