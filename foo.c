@@ -10,6 +10,19 @@
 #include "bar.h"
 #include "baz.h"
 
+#ifndef DEBUG
+  #define DEBUG 0
+#endif
+#if DEBUG
+  #define SZ_FOO_ADD      "  debug: foo_add(a,b)"
+  #define SZ_BAR_MULTIPLY "  debug: bar_multiply(a,b)"
+  #define SZ_BAZ_SQUARE   "  debug: baz_square(a)"
+#else
+  #define SZ_FOO_ADD      ""
+  #define SZ_BAR_MULTIPLY ""
+  #define SZ_BAZ_SQUARE   ""
+#endif 
+
 /*!------------------------------------------------------------------------------------------------
   @defgroup foo A simple math program to demonstrate features of flymake and flydoc
 
@@ -50,9 +63,9 @@ int main(int argc, char *argv[])
     if(argc >= 3)
       b = atoi(argv[2]);
 
-    printf("add     : %d + %d = %d\n", a, b, foo_add(a,b));
-    printf("multiply: %d * %d = %d\n", a, b, bar_multiply(a,b));
-    printf("square  : %d ^ 2 = %d\n", a, baz_square(a));
+    printf("add     : %d + %d = %d%s\n", a, b, foo_add(a,b), SZ_FOO_ADD);
+    printf("multiply: %d * %d = %d%s\n", a, b, bar_multiply(a,b), SZ_BAR_MULTIPLY);
+    printf("square  : %d ^ 2 = %d%s\n", a, baz_square(a), SZ_BAZ_SQUARE);
   }
 
   return 0;
